@@ -51,7 +51,8 @@ app.post('/get-recipe', async (req, res) => {
 		res.json(response.data.choices[0].message.content);
 	} catch (err) {
 		console.error(err);
-		res.status(500).json({ error: 'Failed to generate description' });
+		// res.status(500).json({ error: 'Failed to generate description' });
+		res.status(500).json(err)
 	}
 });
 
